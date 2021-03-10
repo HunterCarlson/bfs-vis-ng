@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "bfs-vis-ng"
+  "defaultProject": "bfs-vis-ng",
+  "cli": {
+    "analytics": false
+  }
 }
