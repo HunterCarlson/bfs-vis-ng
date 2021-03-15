@@ -1,5 +1,13 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
+import { RandomTraversal } from './random-traversal';
+import { Directions } from "./directions";
+
+const N = Directions.N;
+const S = Directions.S;
+const W = Directions.W;
+const E = Directions.E;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -32,11 +40,12 @@ export class AppComponent implements OnInit {
     let rect = this.canvas.nativeElement.getBoundingClientRect();
     let x = event.clientX - rect.left;
     let y = event.clientY - rect.top;
-    this.draw(x, y);
+    this.draw();
   }
 
-  draw(x: number, y: number): void {
-    this.ctx.fillStyle = '#000000';
-    this.ctx.fillRect(x, y, 32, 32);
+  draw(): void {
+
   }
+
+
 }

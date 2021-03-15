@@ -1,7 +1,9 @@
-const N = 1 << 0;
-const S = 1 << 1;
-const W = 1 << 2;
-const E = 1 << 3;
+import { Directions } from "./directions";
+
+const N = Directions.N;
+const S = Directions.S;
+const W = Directions.W;
+const E = Directions.E;
 
 export class RandomTraversal {
   generateMaze(cellWidth: number, cellHeight: number) {
