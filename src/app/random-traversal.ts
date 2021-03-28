@@ -1,4 +1,5 @@
-import { Directions } from "./directions";
+import { exception } from 'node:console';
+import { Directions } from './directions';
 
 const N = Directions.N;
 const S = Directions.S;
@@ -23,10 +24,29 @@ export class RandomTraversal {
     while (edge != null) {
       var i0 = edge.index;
       var d0 = edge.direction;
-      // TODO: make readable with switch statement
-      var i1 =
-        i0 +
-        (d0 === N ? -cellWidth : d0 === S ? cellWidth : d0 === W ? -1 : +1);
+      var i1: number;
+      switch (d0) {
+        case N: {
+          i1 = i0 - cellWidth;
+          break;
+        }
+        case S: {
+          i1 = i0 + cellWidth;
+          break;
+        }
+        case W: {
+          i1 = i0 - 1;
+          break;
+        }
+        case E: {
+          i1 = i0 + 1;
+          break;
+        }
+        default: {
+          throw new exception('invalid direction');
+        }
+      }
+
       var x0 = i0 % cellWidth;
       var y0 = (i0 / cellWidth) | 0;
       var x1: number;
